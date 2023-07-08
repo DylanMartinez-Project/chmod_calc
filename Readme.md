@@ -38,13 +38,22 @@ Repository Structure
 manifest.yaml: A basic Kubernetes manifest file to deploy the application in a Kubernetes cluster. (deployment,svc)
 - Docker Image - The Docker image for the Chmod Calculator application is available on Docker Hub at the following registry: https://hub.docker.com/r/dielawnk8s/chmodcalcapp.
 
-Kubernetes Deployment
+### Kubernetes Deployment
 To deploy the application in a Kubernetes cluster, you can use the included manifest.yaml file. Make sure you have a running Kubernetes cluster and the kubectl command-line tool installed. Run the following command to deploy the application:
 
 
-kubectl apply -f chmod.yaml
-This will create the necessary resources in your Kubernetes cluster to run the Chmod Calculator application.
+- kubectl apply -f chmod.yaml
+<p>This will create the necessary resources in your Kubernetes cluster to run the Chmod Calculator application.
+
+### local Docker run
+- docker pull dielawnk8s/chmodcalcapp:v4.0
+- docker run -p 8501:8501 dielawnk8s/chmodcalcapp:v4.0
+- go to localhost:8501
 
 Feel free to explore the code and customize it according to your needs. If you have any questions or suggestions, please feel free to reach out.
+
+### Future Improvements
+- slim image size using slim.ai or similar tool
+- tightening up security on k8 manifest (security context, root access)
 
 Happy coding!

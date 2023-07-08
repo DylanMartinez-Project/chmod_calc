@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: chmodcalcapp-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: chmodcalcapp
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: chmodcalcapp
-          image: dielawnk8s/chmodcalcapp:v1.0
+          image: dielawnk8s/chmodcalcapp:v4.0
           ports:
             - containerPort: 8501
 
